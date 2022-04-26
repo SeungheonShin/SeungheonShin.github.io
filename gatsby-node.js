@@ -2,6 +2,14 @@ const path = require(`path`)
 const { postsPerPage } = require(`./src/utils/siteConfig`)
 const { paginate } = require(`gatsby-awesome-pagination`)
 
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  actions.setWebpackConfig({
+    resolve : {
+	fallback: { "url" : require.resolve("url/") },
+	},
+  })
+}
+
 /**
  * Here is the place where Gatsby creates the URLs for all the
  * posts, tags, pages and authors that we fetched from the Ghost site.
