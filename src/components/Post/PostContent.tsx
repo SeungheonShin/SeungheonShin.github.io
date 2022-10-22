@@ -6,6 +6,7 @@ interface PostContentProps {
 }
 
 const MarkdownRenderer = styled.div`
+  font-family: 'Times New Roman';
   // Renderer Style
   flex: 1;
   width: 768px;
