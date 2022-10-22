@@ -25,6 +25,7 @@ const ThumbnailImage = styled(GatsbyImage)`
 `;
 
 const PostItemContent = styled.div`
+  min-width: 300px;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -35,7 +36,6 @@ const PostItemContent = styled.div`
 
 const Title = styled.div`
   display: -webkit-box;
-  overflow: hidden;
   margin-bottom: 3px;
   text-overflow: ellipsis;
   white-space: normal;
@@ -73,7 +73,6 @@ const CategoryItem = styled.div`
 
 const Summary = styled.div`
   display: -webkit-box;
-  overflow: hidden;
   margin-top: auto;
   text-overflow: ellipsis;
   white-space: normal;

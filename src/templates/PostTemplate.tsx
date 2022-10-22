@@ -44,7 +44,7 @@ const PostTemplate: React.FC<PostTemplateProps> = ({
 
   return (
     <Template>
-      <PostHead title={title} date={date} categories={categories} thumbnail={gatsbyImageData} />
+      <PostHead title={title} date={date} categories={categories} />
       <PostContent html={html} />
       <CommentWidget />
     </Template>

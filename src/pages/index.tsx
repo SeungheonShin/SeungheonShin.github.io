@@ -1,9 +1,11 @@
 import React, { useMemo } from 'react';
 import { graphql } from 'gatsby';
 import queryString, { ParsedQuery } from 'query-string';
+import styled from '@emotion/styled';
 
 import Template from 'components/common/Template';
 import Introduction from 'components/Main/Introduction';
+import NavBar from 'components/common/NavBar';
 import CategoryList, { CategoryListProps } from 'components/Main/CategoryList';
 import PostList from 'components/Main/PostList';
 
@@ -19,6 +21,11 @@ type IndexPageProps = {
     },
   },
 };
+
+const ContentWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
 
 const IndexPage: React.FC<IndexPageProps> = ({
   location: { search },
@@ -57,8 +64,11 @@ const IndexPage: React.FC<IndexPageProps> = ({
   return (
     <Template>
       <Introduction />
-      <CategoryList selectedCategory={selectedCategory} categoryList={categoryList} />
-      <PostList selectedCategory={selectedCategory} posts={edges} />
+      <NavBar />
+      <ContentWrapper>
+        <CategoryList selectedCategory={selectedCategory} categoryList={categoryList} />
+        <PostList selectedCategory={selectedCategory} posts={edges} />
+      </ContentWrapper>
     </Template>
   );
 };
