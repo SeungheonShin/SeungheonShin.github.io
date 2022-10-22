@@ -1,18 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
 import PostHeadInfo, { PostHeadInfoProps } from 'components/Post/PostHeadInfo';
-
-type GatsbyImgProps = {
-  image: IGatsbyImageData,
-  alt: string,
-  className?: string,
-};
-
-type PostHeadProps = PostHeadInfoProps & {
-  thumbnail: IGatsbyImageData,
-};
+import NavBar from 'components/common/NavBar';
 
 const PostHeadWrapper = styled.div`
   position: relative;
@@ -20,18 +10,11 @@ const PostHeadWrapper = styled.div`
   background-color: #383a59;
 `;
 
-const BackgroundImage = styled((props: GatsbyImgProps) => <GatsbyImage {...props} style={{ position: 'absolute' }} />)`
-  z-index: -1;
-  width: 100%;
-  object-fit: cover;
-  filter: brightness(0.25);
-`;
-
-const PostHead: React.FC<PostHeadProps> = ({ title, date, categories, thumbnail }) => {
+const PostHead: React.FC<PostHeadInfoProps> = ({ title, date, categories }) => {
   return (
     <PostHeadWrapper>
       <PostHeadInfo title={title} date={date} categories={categories} />
-      <BackgroundImage image={thumbnail} alt="thumbnail" />
+      <NavBar />
     </PostHeadWrapper>
   );
 };
