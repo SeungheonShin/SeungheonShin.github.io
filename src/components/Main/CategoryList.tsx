@@ -17,23 +17,28 @@ type GatsbyLinkProps = {
   children: React.ReactNode,
   className?: string,
   to: string,
+  idx: number,
 } & CategoryItemProps;
 
 const CategoryListWrapper = styled.div`
+  position: absolute;
   display: flex;
-  flex-wrap: wrap;
-  width: 768px;
-  margin: 30px auto 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+
+  padding: 50px;
+  width: 180px;
 `;
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => <Link {...props} />)`
-  margin-right: 20px;
-  padding: 5px 0;
+const CategoryItem = styled(({ active, idx, ...props }: GatsbyLinkProps) => (
+  <Link {...props} activeStyle={{ color: '#f8f8f2' }} />
+))`
   font-size: 18px;
-  color: rgba(248, 248, 242, 0.7);
+  color: ${({ active, idx }) => (active ? '#f8f8f2' : colors[idx % colors.length])};
 
-  font-weight: ${(active) => (active ? '800' : '400')};
+  font-weight: 600;
   cursor: pointer;
 
   &:last-of-type {
@@ -45,11 +50,19 @@ const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => <Link {..
   }
 `;
 
+const colors = ['#bd93f9', '#ff79c6', '#50fa7b', '#f1fa8c', '#ffb86c', '#8be9fd'];
+
 const CategoryList: React.FC<CategoryListProps> = ({ selectedCategory, categoryList }) => {
   return (
     <CategoryListWrapper>
-      {Object.entries(categoryList).map(([name, count]) => (
-        <CategoryItem to={`/?category=${name}`} active={name === selectedCategory} key={name}>
+      {Object.entries(categoryList).map(([name, count], idx) => (
+        <CategoryItem
+          to={`/?category=${name}`}
+          active={name === selectedCategory}
+          key={name}
+          // css={{ color: colors[idx % colors.length] }}
+          idx={idx}
+        >
           #{name}({count})
         </CategoryItem>
       ))}
