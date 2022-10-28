@@ -22,7 +22,7 @@ const MarkdownRenderer = styled.div`
 
   // Apply Padding Attribute to All Elements
   p {
-    padding: 3px 0;
+    padding: 5px 0;
   }
 
   // Adjust Heading Element Style
@@ -61,8 +61,9 @@ const MarkdownRenderer = styled.div`
   blockquote {
     margin: 30px 0;
     padding: 5px 15px;
-    border-left: 2px solid #000000;
+    border-left: 2px solid #f8f8f2;
     font-weight: 800;
+    background: #44475a;
   }
 
   // Adjust List Element Style
@@ -80,8 +81,11 @@ const MarkdownRenderer = styled.div`
 
   // Adjust Link Element Style
   a {
-    color: #4263eb;
-    text-decoration: underline;
+    color: #8be9fd;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   // Adjust Code Style
@@ -89,16 +93,29 @@ const MarkdownRenderer = styled.div`
     margin: 30px 0;
     padding: 15px;
     font-size: 15px;
-
+    background: #44475a;
     ::-webkit-scrollbar-thumb {
       background: rgba(255, 255, 255, 0.5);
       border-radius: 3px;
     }
   }
 
-  code[class*='language-'],
-  pre[class*='language-'] {
+  code[class*='language-'] {
+    background: #383a59;
+    border: 1px solid #ff79c6;
     tab-size: 2;
+    border-radius: 5px;
+  }
+
+  pre[class*='language-'] {
+    background: #383a59;
+    border: 1px solid #ff79c6;
+    tab-size: 2;
+    border-radius: 5px;
+
+    code[class*='language-'] {
+      border: none;
+    }
   }
 `;
 
