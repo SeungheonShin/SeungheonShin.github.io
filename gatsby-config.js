@@ -38,10 +38,11 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-prismjs',
-            options: {
-              classPrefix: 'language-',
-            },
+          resolve: `gatsby-remark-highlight-code`,
+          options: {
+            theme: "dracula",
+            lineNumbers: true,
+          },
           },
           {
             resolve: 'gatsby-remark-images',

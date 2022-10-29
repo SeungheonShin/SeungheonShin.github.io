@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
 
 import Template from 'components/common/Template';
 import PostHead from 'components/Post/PostHead';
@@ -22,6 +23,8 @@ type PostTemplateProps = {
     },
   },
 };
+
+void deckDeckGoHighlightElement();
 
 const PostTemplate: React.FC<PostTemplateProps> = ({
   data: {

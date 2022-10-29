@@ -19,10 +19,15 @@ const MarkdownRenderer = styled.div`
   font-size: 16px;
   font-weight: 400;
   color: #f8f8f2;
-
   // Apply Padding Attribute to All Elements
   p {
     padding: 5px 0;
+    code {
+      background: #383a59;
+      border: 1px solid #ff79c6;
+      border-radius: 5px;
+      padding: 0 2px;
+    }
   }
 
   // Adjust Heading Element Style
@@ -88,34 +93,10 @@ const MarkdownRenderer = styled.div`
     }
   }
 
-  // Adjust Code Style
-  pre[class*='language-'] {
-    margin: 30px 0;
-    padding: 15px;
-    font-size: 15px;
-    background: #44475a;
-    ::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.5);
-      border-radius: 3px;
-    }
-  }
-
-  code[class*='language-'] {
-    background: #383a59;
-    border: 1px solid #ff79c6;
-    tab-size: 2;
-    border-radius: 5px;
-  }
-
-  pre[class*='language-'] {
-    background: #383a59;
-    border: 1px solid #ff79c6;
-    tab-size: 2;
-    border-radius: 5px;
-
-    code[class*='language-'] {
-      border: none;
-    }
+  deckgo-highlight-code {
+    --deckgo-highlight-code-carbon-background: #2f3147;
+    --deckgo-highlight-code-token-comment: #f1fa8c;
+    --deckgo-highlight-code-token-punctuation: rgba(248, 248, 242, 0.7);
   }
 `;
 
