@@ -21,14 +21,15 @@ type GatsbyLinkProps = {
 } & CategoryItemProps;
 
 const CategoryListWrapper = styled.div`
-  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
 
-  padding: 50px;
-  width: 180px;
+  box-sizing: content-box;
+  margin: 50px 30px;
+  width: 200px;
+  border-right: 1px solid #44475a;
 `;
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

@@ -13,7 +13,7 @@ const PostHeadInfoWrapper = styled.div`
   flex-direction: column;
   gap: 20px;
   width: 768px;
-  height: 300px;
+  height: 200px;
   margin: 0 auto;
   padding: 60px 0 30px 0;
 `;
@@ -27,7 +27,7 @@ const Title = styled.div`
   white-space: normal;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 800;
   color: #f8f8f2;
 `;
@@ -48,7 +48,7 @@ const PostData = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top: 10px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   color: #f8f8f2;
 `;

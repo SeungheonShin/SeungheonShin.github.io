@@ -4,14 +4,17 @@ import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/
 
 import Template from 'components/common/Template';
 import PostHead from 'components/Post/PostHead';
+import TableOfContents from 'components/Post/TableOfContents';
 import PostContent from 'components/Post/PostContent';
 import CommentWidget from 'components/Post/CommentWidget';
 
 import { PostFrontmatterType } from 'types/PostItem.types';
+import styled from '@emotion/styled';
 
 export type PostPageItemType = {
   node: {
     html: string,
+    tableOfContents: string,
     frontmatter: PostFrontmatterType,
   },
 };
@@ -26,6 +29,12 @@ type PostTemplateProps = {
 
 void deckDeckGoHighlightElement();
 
+const ContentWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  padding: 0 200px 0 260px;
+`;
+
 const PostTemplate: React.FC<PostTemplateProps> = ({
   data: {
     allMarkdownRemark: { edges },
@@ -34,6 +43,7 @@ const PostTemplate: React.FC<PostTemplateProps> = ({
   const {
     node: {
       html,
+      tableOfContents,
       frontmatter: {
         title,
         date,
@@ -48,7 +58,10 @@ const PostTemplate: React.FC<PostTemplateProps> = ({
   return (
     <Template>
       <PostHead title={title} date={date} categories={categories} />
-      <PostContent html={html} />
+      <ContentWrapper>
+        <TableOfContents content={tableOfContents} />
+        <PostContent html={html} />
+      </ContentWrapper>
       <CommentWidget />
     </Template>
   );
@@ -62,6 +75,7 @@ export const queryMarkdownDataBySlug = graphql`
       edges {
         node {
           html
+          tableOfContents
           frontmatter {
             title
             summary

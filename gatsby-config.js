@@ -36,6 +36,10 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
+        tableOfContents: {
+          heading: null,
+          maxDepth: 6,
+        },
         plugins: [
           {
           resolve: `gatsby-remark-highlight-code`,
@@ -63,6 +67,7 @@ module.exports = {
               rel: 'nofollow',
             },
           },
+          `gatsby-remark-autolink-headers`,
         ],
       },
     }
