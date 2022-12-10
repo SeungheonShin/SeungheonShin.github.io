@@ -150,7 +150,7 @@ thumbnail: './201805789-52ef3a88-13cd-4b58-9f85-fb7da8f1fa13.png'
 
 - offer를 전송할때 프로토콜은 RTC SDP(Session Description Protocol)를 사용한다.
 
-![](4.png)
+![](5.png)
 
 - local offer를 생성해서 시그널링 서버에 전송한다.
 
@@ -210,7 +210,7 @@ const handleRemoteAnswer = async (answer) => {
 
 ### ICE 연결 ~ 연결 완료
 
-![](5.png)
+![](6.png)
 
 - ice gathering이 완료되면 시그널링 서버로 알리고, 참가자들은 다시 서버로부터 알림을 받아 ice candidate를 추가한다.
 
@@ -247,7 +247,7 @@ pcRef.current.addEventListener('track', (event) => {
 
 ## 5. 모면 프로젝트에는 어떻게 쓰나요?
 
-![](6.png)
+![](4.png)
 
 - Mesh 방식은 3~4명 이상이 연결되면 정상적인 통신이 힘들어진다고 한다.(수 년전 기준)
     - 우리 프로젝트는 최대 6명 기준으로 기획했다.
