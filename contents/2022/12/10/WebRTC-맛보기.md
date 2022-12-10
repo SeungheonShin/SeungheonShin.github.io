@@ -1,5 +1,13 @@
+---
+date: '2022-12-10'
+title: 'WebRTC 맛보기 - 프로젝트 Momyeon'
+categories: ['WebRTC']
+summary: 'WebRTC의 기본적인 개념을 알아보자.'
+thumbnail: './201805789-52ef3a88-13cd-4b58-9f85-fb7da8f1fa13.png'
+---
+
 # WebRTC 맛보기
-해당 글은 [Momyeon 프로젝트](https://github.com/boostcampwm-2022/web23_MoMyeon) 진행 중 WebRTC에 대한 기본적인 개념을 공유하기 위해 작성한 글입니다.
+해당 글은 [MoMyeon 프로젝트](https://github.com/boostcampwm-2022/web23_MoMyeon) 진행 중 WebRTC에 대한 기본적인 개념을 공유하기 위해 작성한 글입니다.
 
 ## 1. 왜 WebRTC를 쓰나요?
 
